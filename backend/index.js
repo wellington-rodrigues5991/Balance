@@ -45,7 +45,7 @@ app.get('/', async (req, res) => {
 app.get('/leaderboard', async (req, res) => {
   const database = new Database();
   const rawScores = await database.get('leaderboard', 'score');
-  const scores = rawScores;
+  const scores = (rawScores == null ? {_id: 'score', scores: []} : rawScores );
 
   res.status(200).json(scores);
 });

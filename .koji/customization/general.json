@@ -1,8 +1,46 @@
 {
   "general": {
     "name": "Balance",
-    "fontFamily": "https://fonts.googleapis.com/css?family=Anton&display=swap",
-    "text": "#a8ff00"
+    "fontFamily": "Roboto",
+    "playButton": "Touch/Click to play the game",
+    "background": {
+      "data": [
+        {
+          "image": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/qyepg-concept03.png",
+          "depth": 0
+        },
+        {
+          "image": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/uixr2-concept04.png",
+          "depth": "0.25"
+        },
+        {
+          "image": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/q2eu7-concept05.png",
+          "depth": "0.8"
+        },
+        {
+          "image": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/k30gj-concept06.png",
+          "depth": "0"
+        }
+      ]
+    },
+    "colors": {
+      "primary": "#0337b5",
+      "secundary": "#fff000",
+      "text": "#a8ff00",
+      "win": "#34ebab",
+      "lose": "#a83232"
+    },
+    "logo": "",
+    "sound": {
+      "skinOn": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/nszxh-concept07.png",
+      "skinOff": "https://images.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/30oj2-concept08.png",
+      "background": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/8ibiw-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3",
+      "die": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/g2rvw-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3",
+      "lifeWin": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/rgz9m-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3",
+      "lifeLose": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/txrg9-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3",
+      "win": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/cjh6y-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3",
+      "lose": "https://objects.koji-cdn.com/47a12ab1-a102-4c02-95bd-e32900350081/5atp3-2om4ya7230ef2f7bd4e25822ce3813915c51c.mp3"
+    }
   },
   "@@editor": [
     {
@@ -14,17 +52,98 @@
         {
           "key": "name",
           "name": "App Name",
-          "type": "string"
+          "type": "text"
+        },
+        {
+          "key": "logo",
+          "name": "App Logo",
+          "type": "image"
         },
         {
           "key": "fontFamily",
           "name": "Font Family",
-          "type": "string"
+          "description": "",
+          "type": "text"
         },
         {
-          "key": "text",
-          "name": "Text Color",
-          "type": "color"
+          "key": "playButton",
+          "name": "Play Button",
+          "type": "text"
+        },
+        {
+          "key": "background",
+          "name": "Background Parallax",
+          "type": "custom<background-parallax>"
+        },
+        {
+          "key": "colors",
+          "name": "Colors",
+          "type": "object<Color>",
+          "typeOptions": {
+            "Color": {
+              "primary": {
+                "name": "Primary",
+                "type": "color"
+              },
+              "secundary": {
+                "name": "Secundary",
+                "type": "color"
+              },
+              "text": {
+                "name": "Text",
+                "type": "color"
+              },
+              "win": {
+                "name": "Win",
+                "type": "color"
+              },
+              "lose": {
+                "name": "Lose",
+                "type": "color"
+              }
+            }
+          }
+        },
+        {
+          "key": "sound",
+          "name": "Sounds",
+          "type": "object<Color>",
+          "typeOptions": {
+            "Color": {
+              "skinOn": {
+                "name": "Skin Sound Active",
+                "type": "image"
+              },
+              "skinOff": {
+                "name": "Skin Sound Inactive",
+                "type": "image"
+              },
+              "background": {
+                "name": "Background",
+                "type": "sound"
+              },
+              "die": {
+                "name": "Die",
+                "type": "sound"
+              },
+              "lifeWin": {
+                "name": "Win life",
+                "type": "sound"
+              },
+              "lifeLose": {
+                "name": "Lose life",
+                "type": "sound"
+              },
+              "win": {
+                "name": "Win Point",
+                "type": "sound"
+              },
+              "lose": {
+                "name": "Lose Point",
+                "type": "sound"
+              }
+            }
+          }
         }
       ]
     }

@@ -2,15 +2,15 @@ import GameObject from '../config/gameObject';
 
 export const BackgroundParallax = new GameObject({
     preload(){
-        let url = window.Data.background;
+        let url = window.Data.backgrounds;
         
         for(let i = 0; i < url.length; i++){
-            this.load.image('background'+i, url[i]);
+            this.load.image('background'+i, url[i].image);
         }
     },  
     create(){
         this.background = {content: []};
-        let url = window.Data.background;
+        let url = window.Data.backgrounds;
 
         for(let i = 0; i < url.length; i++){
             this.background.content[i] = this.add.tileSprite(
@@ -20,15 +20,17 @@ export const BackgroundParallax = new GameObject({
                 window.innerHeight, 
                 'background'+i
             )
+            this.background.content[i].config = url[i].depth;
         }
         window.addEventListener('resize', function(){this.resizeBackground();}.bind(this));
         this.resizeBackground();
     },
     update(){
-        if(window.Data.play == true){
+        if(window.Data.play != null && window.Data.play != false){
             for(let i = 0; i < this.background.content.length; i++){
-                const background = this.background.content[i];                
-                background.tilePositionY -= (this.obsctacles.speed * (i/this.background.content.length)) * 0.5;
+                const background = this.background.content[i]; 
+
+                background.tilePositionY -= background.config;
             }
         }
     },

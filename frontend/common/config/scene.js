@@ -2,9 +2,9 @@ import Phaser from 'phaser';
 
 export default class Scene extends Phaser.Scene{
     constructor(props){
-        super(props.name);
+        super('scene1');
 
-        const content = props.content;
+        const content = props;
         const temp = {};
         for(let i = 0; i < content.length; i++){
             const keys = Object.keys(content[i]);

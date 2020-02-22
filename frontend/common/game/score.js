@@ -6,9 +6,9 @@ export const Score = new GameObject({
     },    
     create(){
         this.score = this.add.text(0, window.innerHeight * .05, '--', { fontFamily: window.Data.fontFamily });
-        this.score.setFontSize(window.innerHeight * .17);
+        this.score.setFontSize(window.innerHeight * .10);
         this.score.setAlign('center');
-        this.score.setColor(window.Data.textColor);
+        this.score.setColor(window.Data.color.text);
 
         this.score.start = {time: this.time.now, count: 0};
 
@@ -27,7 +27,7 @@ export const Score = new GameObject({
     },
     update(){
         this.score.x = window.innerWidth/2 - this.score.displayWidth/2;
-
+        
         if(window.Data.play == null) this.score.y = -window.innerHeight * 2;
         if(window.Data.play == true){
             if(this.score.start.count == 0){
@@ -35,9 +35,9 @@ export const Score = new GameObject({
                 this.score.start.time = this.time.now
             }
 
-            const points = ((this.time.now - this.score.start.time)/2000).toFixed(0);
+            const points = parseInt(((this.time.now - this.score.start.time)/2000).toFixed(0)) + parseInt(window.bonus == undefined ? 0 : window.bonus);
             this.score.y = window.innerHeight * .05;
-            this.score.setFontSize(window.innerHeight * .17);
+            this.score.setFontSize(window.innerHeight * .15);
             this.score.setText(points);
             window.Data.score = points;
             
