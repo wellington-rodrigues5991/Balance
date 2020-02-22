@@ -81,7 +81,7 @@
         {
           "key": "skin",
           "name": "Skin",
-          "type": "custom<https://8080-f1cc31f1-de70-4848-8c88-6685a8154ed4.koji-staging.com>"
+          "type": "custom<sprite-animation>"
         },
         {
           "key": "life",
