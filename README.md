@@ -1,1 +1,1 @@
-Jogo usando phaser ainda em desenvolvimento
+Jogo feito usando phaser ainda em desenvolvimento
